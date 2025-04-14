@@ -31,10 +31,9 @@ body {
 }
 
 .menu {
-  background-color: var(--bg-menu-color);
-  margin-top: -75px;
-  width: 100%;
   position: fixed;
+  background-color: var(--bg-menu-color);
+  width: 100%;
   padding: 15px 0 6px 0;
 
   & ul {
@@ -67,10 +66,6 @@ body {
   padding: 0;
 }
 
-.container {
-  margin-top: 75px;
-}
-
 .scroll-top {
   position: fixed;
   bottom: 20px;
@@ -84,8 +79,8 @@ body {
 
   & i {
     color: #fff;
-    font-size: 30px;
-    padding: 10px;
+    font-size: 28px;
+    padding: 7px 9px;
   }
 }
 
@@ -101,8 +96,28 @@ section {
 .home__container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+  & .icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-right: 60px;
+
+    & a i {
+      font-size: 35px;
+      color: var(--buttons-color);
+      transition: all 0.3s ease-in-out;
+    }
+  }
 
   & .welcome-text {
+    width: 55%;
+
     & h1 {
       font-size: 2.5rem;
       font-weight: 600;
@@ -112,10 +127,12 @@ section {
       font-size: 1.25rem;
       font-weight: 400;
       color: var(--subtitle-color);
+      margin-top: 4px;
+      margin-bottom: 20px;
     }
     & p {
       font-size: 1rem;
-      font-weight: 400;
+      font-weight: 500;
       color: var(--text-color);
     }
     & div {
@@ -123,12 +140,17 @@ section {
       flex-direction: row;
       align-items: center;
       margin-top: 20px;
+      font-weight: 500;
       gap: 2px;
       & i {
         color: var(--buttons-color);
       }
     }
   }
+
+  & .hello-img {
+    width: 350px;
+  } 
 }
 
 
