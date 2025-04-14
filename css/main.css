@@ -31,10 +31,19 @@ body {
 }
 
 .menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
   position: fixed;
   background-color: var(--bg-menu-color);
   width: 100%;
   padding: 15px 0 6px 0;
+
+  & .logo {
+    width: 110px;
+    margin-left: 2%;
+    cursor: pointer;
+  }
 
   & ul {
     margin-right: 8%;
