@@ -1,3 +1,12 @@
+// Splash Screen
+window.onload = () => {
+  setTimeout(() => {
+    document.body.classList.add('loaded');
+    setTimeout(() => {
+      document.querySelector('.splash-screen').remove();
+    }, 500);
+  }, 2000);
+};
 
 /* Mecânica modo dark */
 const btnColorMode = document.querySelector('#btn-color-mode');
