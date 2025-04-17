@@ -5,20 +5,27 @@ window.onload = () => {
     setTimeout(() => {
       document.querySelector('.splash-screen').remove();
     }, 500);
-  }, 2000);
+  }, 0);
 };
 
 /* Mecânica modo dark */
 const btnColorMode = document.querySelector('#btn-color-mode');
 
 updateButtonText(localStorage.getItem('dark-mode') === 'enabled');
+updateLogo(localStorage.getItem('dark-mode') === 'enabled');
 
 btnColorMode.addEventListener('click', () => {
   const isDarkMode = document.body.classList.contains('dark-theme');
   localStorage.setItem('dark-mode', isDarkMode ? 'enabled' : 'disabled');
   updateButtonText(isDarkMode);
+  updateLogo(isDarkMode);
 })
 
+function updateLogo(isDarkMode) {
+  const logo = document.querySelector('.logo img');
+  logo.src = `./assets/imgs/${isDarkMode ? 'logo-light.png' : 'logo-dark.png'}`;
+  logo.alt = isDarkMode ? 'Logo claro' : 'Logo escuro';
+} 
 
 function updateButtonText(isDarkMode) {
   btnColorMode.querySelector('span').innerText = isDarkMode ? 'moon_stars' : 'light_mode';
