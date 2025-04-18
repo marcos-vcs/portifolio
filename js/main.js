@@ -4,7 +4,7 @@ window.onload = () => {
     document.body.classList.add('loaded');
     setTimeout(() => {
       document.querySelector('.splash-screen').remove();
-    }, 500);
+    }, 1500);
   }, 0);
 };
 
@@ -85,3 +85,17 @@ document.querySelector('.scroll-top__link').addEventListener('click', (e) => {
     behavior: 'smooth'
   });
 });
+
+/* Mecânica de download de CV */
+const downloadBtn = document.querySelector('.sobre__download-cv button');
+
+if(downloadBtn) {
+  downloadBtn.addEventListener('click', () => {
+    window.open(
+      '../assets/docs/Marcos Vinicio Cardoso Sousa - Currículo - PT-BR.pdf',
+      '_blank',
+      'noopener,noreferrer'
+    );
+  }
+  );
+}
