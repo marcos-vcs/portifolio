@@ -103,6 +103,7 @@ if (downloadBtn) {
   });
 }
 
+/* Mecânica accordion Habilidades */
 function formataDataUltimaAtualizacao(lastUpdate) {
   const data = new Date(lastUpdate);
   const meses = [
@@ -244,3 +245,10 @@ for (let i = 0; i < habilidades.length; i++) {
 
   habilidadesContainer.appendChild(card);
 }
+
+/* Mecânica footer */
+const footer = document.querySelector(".footer");
+footer.innerHTML = footer.innerHTML.replace(
+  "{atualYear}",
+  new Date().getFullYear()
+);
