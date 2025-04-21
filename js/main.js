@@ -45,7 +45,6 @@ const observerOptions = {
   threshold: 0.5,
 };
 
-// Callback do Observer
 const observerCallback = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -197,6 +196,7 @@ const habilidades = [
   },
 ];
 
+/* Mecânica timeline Qualificações */
 const habilidadesContainer = document.querySelector("#accordionHabilities");
 habilidadesContainer.innerHTML = "";
 for (let i = 0; i < habilidades.length; i++) {
@@ -252,3 +252,190 @@ footer.innerHTML = footer.innerHTML.replace(
   "{atualYear}",
   new Date().getFullYear()
 );
+
+/* Mecânica botões Qualificacações */
+const btnQualificacoes = document.querySelectorAll(".btn-qualificacoes");
+
+btnQualificacoes.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (btn.classList.contains("active__qualificacoes")) {
+      return;
+    }
+
+    btnQualificacoes.forEach((btn) => {
+      btn.classList.remove("active__qualificacoes");
+    });
+
+    btn.classList.add("active__qualificacoes");
+    loadQualificacoes();
+  });
+});
+
+
+const trabalhos = [
+  {
+    title: "Desenvolvedor Front-End",
+    company: "Empresa A",
+    startDate: "01/2020",
+    endDate: "12/2023",
+  },
+  {
+    title: "Desenvolvedor Back-End",
+    company: "Empresa B",
+    startDate: "01/2020",
+    endDate: "12/2023",
+  },
+  {
+    title: "Estagiário em Desenvolvimento Web",
+    company: "Empresa C",
+    startDate: "01/2020",
+    endDate: "12/2023",
+  },
+];
+const formacao = [
+  {
+    title: "Bacharel em Ciência da Computação",
+    institution: "Universidade X",
+    startDate: "01/2020",
+    endDate: "12/2023",
+  },
+  {
+    title: "Técnico em Informática",
+    institution: "Escola Y",
+    startDate: "01/2020",
+    endDate: "12/2023",
+  },
+  {
+    title: "Curso de Desenvolvimento Web",
+    institution: "Instituto Z",
+    startDate: "01/2020",
+    endDate: "12/2023",
+  },
+  {
+    title: "Curso de Banco de Dados",
+    institution: "Instituto W",
+    startDate: "01/2020",
+    endDate: "12/2023",
+  },
+  {
+    title: "Curso de Python",
+    institution: "Instituto V",
+    startDate: "01/2020",
+    endDate: "12/2023",
+  },
+];
+
+function converteDatasQualificacoes(start, end) {
+  const meses = [
+    "Jan.",
+    "Fev.",
+    "Mar.",
+    "Abr.",
+    "Mai.",
+    "Jun.",
+    "Jul.",
+    "Ago.",
+    "Set.",
+    "Out.",
+    "Nov.",
+    "Dez.",
+  ];
+
+  const [mesStart, anoStart] = start.split("/");
+  const [mesEnd, anoEnd] = end.split("/");
+
+  const startStr = `${meses[parseInt(mesStart) - 1]} ${anoStart}`;
+  const endStr = `${meses[parseInt(mesEnd) - 1]} ${anoEnd}`;
+
+  return `${startStr} - ${endStr}`;
+}
+
+loadQualificacoes();
+
+function loadQualificacoes() {
+  const btnAtivoQualificacoes = document.querySelector(
+    ".active__qualificacoes"
+  );
+  const timeline = document.querySelector(".timeline");
+
+  // Adiciona o fade-out
+  timeline.classList.add("fade-out");
+
+  // Espera a transição terminar antes de atualizar o conteúdo
+  timeline.addEventListener("transitionend", function handleFadeOut() {
+    timeline.removeEventListener("transitionend", handleFadeOut);
+
+    const ehTrabalhos =
+      btnAtivoQualificacoes.querySelector("span").innerText === "Trabalhos";
+
+    // Limpa o conteúdo e carrega o novo
+    if (ehTrabalhos) {
+      loadTrabalhos();
+    } else {
+      loadFormacoes();
+    }
+
+    // Aplica fade-in no próximo "tick" do JS
+    requestAnimationFrame(() => {
+      timeline.classList.remove("fade-out");
+      timeline.classList.add("fade-in");
+
+      // Remove a classe fade-in depois que a animação acabar pra poder repetir depois
+      setTimeout(() => {
+        timeline.classList.remove("fade-in");
+      }, 500);
+    });
+  });
+}
+
+function loadFormacoes() {
+  const timeline = document.querySelector(".timeline");
+  timeline.innerHTML = "";
+
+  for (let i = 0; i < formacao.length; i++) {
+    const { title, institution, startDate, endDate } = formacao[i];
+    const timelineItem = document.createElement("div");
+    timelineItem.classList.add("timeline-item");
+    timelineItem.classList.add(i % 2 === 0 ? "left" : "right");
+
+    timelineItem.innerHTML = `
+      <div class="content">
+        <h5>${title}</h5>
+        <p class="institution">${institution}</p>
+        <p class="date">
+            <i class="fa-solid fa-calendar-days"></i> ${converteDatasQualificacoes(
+              startDate,
+              endDate
+            )}
+        </p>
+      </div>
+      `;
+    timeline.appendChild(timelineItem);
+  }
+}
+
+function loadTrabalhos() {
+  const timeline = document.querySelector(".timeline");
+  timeline.innerHTML = "";
+
+  for (let i = 0; i < trabalhos.length; i++) {
+    const { title, company, startDate, endDate } = trabalhos[i];
+    const timelineItem = document.createElement("div");
+    timelineItem.classList.add("timeline-item");
+    timelineItem.classList.add(i % 2 === 0 ? "left" : "right");
+
+    timelineItem.innerHTML = `
+      <div class="content">
+        <h5>${title}</h5>
+        <p class="institution">${company}</p>
+        <p class="date">
+            <i class="fa-solid fa-calendar-days"></i> ${converteDatasQualificacoes(
+              startDate,
+              endDate
+            )}
+        </p>
+      </div>
+      `;
+    timeline.appendChild(timelineItem);
+  }
+}
