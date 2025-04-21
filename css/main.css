@@ -346,8 +346,8 @@ section {
   --bs-accordion-border-width: 0;
   --bs-accordion-btn-icon-width: 1.5rem;
   --bs-accordion-inner-border-radius: 0;
-  --bs-accordion-btn-icon: url('../assets/imgs/angle-down-solid.svg');
-  --bs-accordion-btn-active-icon: url('../assets/imgs/angle-down-solid.svg');
+  --bs-accordion-btn-icon: url('../../assets/imgs/angle-down-solid.svg');
+  --bs-accordion-btn-active-icon: url('../../assets/imgs/angle-down-solid.svg');
   --bs-accordion-btn-focus-box-shadow: none;
   z-index: 1;
 }
