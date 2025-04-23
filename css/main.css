@@ -215,10 +215,10 @@ section {
   }
 }
 
-.sobre__container {
+.about__container {
   height: 100dvh;
 
-  & .sobre__title {
+  & .about__title {
     text-align: center;
     margin-bottom: 60px;
     & h1 {
@@ -234,18 +234,18 @@ section {
     }
   }
 
-  & .sobre__content {
+  & .about__content {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 35px;
 
-    & .sobre__img-container {
+    & .about__img-container {
       width: 370px;
     }
 
-    & .sobre__text {
+    & .about__text {
       width: 55%;
 
       & p {
@@ -253,7 +253,7 @@ section {
         font-weight: 500;
         color: var(--text-color);
       }
-      & .sobre__info {
+      & .about__info {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -286,7 +286,7 @@ section {
 
       }
 
-      & .sobre__download-cv button {
+      & .about__download-cv button {
         --bs-btn-color: var(--icon-download-cv);
         --bs-btn-bg: var(--buttons-color);
         --bs-btn-border-color: var(--buttons-color);
@@ -309,11 +309,11 @@ section {
         margin-top: 30px;
       }
       
-      & .sobre__download-cv button:hover {
+      & .about__download-cv button:hover {
         box-shadow: 0 5px 15px rgba(82, 34, 208, 0.3);
       }
       
-      & .sobre__download-cv button:active {
+      & .about__download-cv button:active {
         transform: translateY(2px);
         transition: transform 0.1s ease;
       }
@@ -321,10 +321,10 @@ section {
   }
 }
 
-.habilidades__container {
+.skills__container {
   height: 100dvh;
 
-  & .habilidades__title {
+  & .skills__title {
     text-align: center;
     margin-bottom: 40px;
     & h1 {
@@ -341,7 +341,7 @@ section {
   }
 }
 
-#accordionHabilities {
+#accordionSkills {
   --bs-accordion-bg: none;
   --bs-accordion-active-bg: none;
   --bs-accordion-border-color: none;
@@ -384,20 +384,20 @@ section {
 }
 
 /* Injetado via JS */
-.habilidade {
+.skill {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   --bs-progress-bar-bg: var(--buttons-color);
   --bs-progress-bar-height: 10px;
 
-  & .habilidade__nome {
+  & .skill_name {
     font-size: 1.2rem;
     font-weight: 500;
     color: var(--text-color);
   }
 
-  & .habilidade__nivel {
+  & .skill_level {
     font-size: 1rem;
     font-weight: 400;
     color: var(--subtitle-color);
@@ -414,7 +414,12 @@ section {
     height: 10px;
     transition: all 0.3s ease-in-out;
   }
-} 
+}
+
+.skills_fix {
+  margin-left: 3.5%;
+  margin-top: -25px;
+}
 
 .footer {
   display: flex;
@@ -433,13 +438,13 @@ section {
   }
 }
 
-.qualificacoes__container {
+.qualifications__container {
   height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  & .qualificacoes__title {
+  & .qualifications__title {
     text-align: center;
     margin-bottom: 40px;
     & h1 {
@@ -455,7 +460,7 @@ section {
     }
   }
 
-  & .qualificacoes__content .qualificacoes_buttons {
+  & .qualifications__content .qualifications_buttons {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -465,7 +470,7 @@ section {
   }
 }
 
-.btn-qualificacoes {
+.btn-qualifications {
   font-size: 1.5rem;
   font-weight: 500;
   color: var(--subtitle-color);
@@ -474,12 +479,12 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-.btn-qualificacoes:hover {
+.btn-qualifications:hover {
   color: var(--buttons-color);
   transition: all 0.3s ease-in-out;
 }
 
-.active__qualificacoes {
+.active__qualifications {
   color: var(--buttons-color);
   border-bottom: 2px solid var(--buttons-color);
   transition: all 0.3s ease-in-out;
