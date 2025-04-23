@@ -1,3 +1,9 @@
+/* 
+* Author: Marcos Vinicio Cardoso Sousa
+* Date: 2025-04-23
+* Description: Main CSS file for the portfolio website.
+*/
+
 @import './reset.css';
 @import './theme.css';
 @import './animations.css';

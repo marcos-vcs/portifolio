@@ -1,29 +1,35 @@
+/* 
+* Author: Marcos Vinicio Cardoso Sousa
+* Date: 2025-04-23
+* Description: Theme styles for the portfolio website.
+*/
+
 .light-theme {
-    --bs-body-bg: #f8f9fa;   
-    --bg-menu-color: #ffffff;   
-    --title-color: #151717;     
-    --subtitle-color: #554545;  
-    --text-color: #2d2d2d;      
-    --buttons-color: #5222d0;   
-    --buttons-hover: #3f1a9d;   
-    --buttons-active: #2d116a;  
-    --icon-download-cv: #ffffff;
-    --border-color: #e0e0e0;    
-    --accent-color: #6d28d9;    
-    --ripple-color: rgba(82, 34, 208, 0.1);
-  }
-  
-  .dark-theme {
-    --bs-body-bg: #0f0f1a;
-    --bg-menu-color: #1a1a2e;
-    --title-color: #e6e6ff;
-    --subtitle-color: #a0a0cc;
-    --text-color: #ccccff;
-    --buttons-color: #6d28d9;
-    --buttons-hover: #5b21b6;
-    --buttons-active: #451c8b;
-    --icon-download-cv: #ffffff;
-    --border-color: #2d2d4d;
-    --accent-color: #7c3aed;
-    --ripple-color: rgba(255, 255, 255, 0.1);
-  }
+  --bs-body-bg: #f8f9fa;
+  --bg-menu-color: #ffffff;
+  --title-color: #151717;
+  --subtitle-color: #554545;
+  --text-color: #2d2d2d;
+  --buttons-color: #5222d0;
+  --buttons-hover: #3f1a9d;
+  --buttons-active: #2d116a;
+  --icon-download-cv: #ffffff;
+  --border-color: #e0e0e0;
+  --accent-color: #6d28d9;
+  --ripple-color: rgba(82, 34, 208, 0.1);
+}
+
+.dark-theme {
+  --bs-body-bg: #0f0f1a;
+  --bg-menu-color: #1a1a2e;
+  --title-color: #e6e6ff;
+  --subtitle-color: #a0a0cc;
+  --text-color: #ccccff;
+  --buttons-color: #6d28d9;
+  --buttons-hover: #5b21b6;
+  --buttons-active: #451c8b;
+  --icon-download-cv: #ffffff;
+  --border-color: #2d2d4d;
+  --accent-color: #7c3aed;
+  --ripple-color: rgba(255, 255, 255, 0.1);
+}
