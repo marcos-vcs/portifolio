@@ -1,4 +1,8 @@
-
+/*
+* Author: Marcos Vinicio Cardoso Sousa
+* Date: 2025-04-23
+* Description: This script handles the functionality of a personal portfolio website.
+*/
 const App = {
   data: {
     btnColorMode: document.querySelector("#btn-color-mode"),
