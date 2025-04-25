@@ -4,11 +4,11 @@
 * Description: Main CSS file for the portfolio website.
 */
 
-@import './reset.css';
-@import './theme.css';
-@import './animations.css';
-@import './timeline.css';
-@import './splash-screen.css';
+@import "./reset.css";
+@import "./theme.css";
+@import "./animations.css";
+@import "./timeline.css";
+@import "./splash-screen.css";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
@@ -24,11 +24,8 @@ body {
 }
 
 * {
-  transition: 
-    background-color 0.3s ease,
-    color 0.2s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, color 0.2s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .material-symbols-outlined {
@@ -168,7 +165,7 @@ section {
       margin-top: 20px;
       font-weight: 500;
       color: var(--text-color);
-      
+
       gap: 2px;
       & i {
         color: var(--buttons-color);
@@ -289,7 +286,6 @@ section {
             margin: 0;
           }
         }
-
       }
 
       & .about__download-cv button {
@@ -301,9 +297,9 @@ section {
         --bs-btn-hover-border-color: var(--buttons-hover);
         --bs-btn-active-bg: var(--buttons-active);
         --bs-btn-active-border-color: var(--buttons-active);
-      
+
+        margin-top: 35px;
         position: relative;
-        overflow: hidden;
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
@@ -311,17 +307,10 @@ section {
         font-size: 1rem;
         padding: 10px 15px;
         transition: all 0.3s ease;
-        transform: translateY(0);
-        margin-top: 30px;
-      }
-      
-      & .about__download-cv button:hover {
-        box-shadow: 0 5px 15px rgba(82, 34, 208, 0.3);
-      }
-      
-      & .about__download-cv button:active {
-        transform: translateY(2px);
-        transition: transform 0.1s ease;
+
+        & i {
+          font-size: 1.125rem;
+        }
       }
     }
   }
@@ -355,8 +344,8 @@ section {
   --bs-accordion-border-width: 0;
   --bs-accordion-btn-icon-width: 1.5rem;
   --bs-accordion-inner-border-radius: 0;
-  --bs-accordion-btn-icon: url('../../assets/imgs/angle-down-solid.svg');
-  --bs-accordion-btn-active-icon: url('../../assets/imgs/angle-down-solid.svg');
+  --bs-accordion-btn-icon: url("../../assets/imgs/angle-down-solid.svg");
+  --bs-accordion-btn-active-icon: url("../../assets/imgs/angle-down-solid.svg");
   --bs-accordion-btn-focus-box-shadow: none;
   z-index: 1;
 }
@@ -494,4 +483,125 @@ section {
   color: var(--buttons-color);
   border-bottom: 2px solid var(--buttons-color);
   transition: all 0.3s ease-in-out;
+}
+
+.portifolio__container {
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .portifolio__title {
+    text-align: center;
+    margin-bottom: 40px;
+    & h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--title-color);
+    }
+    & h3 {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--subtitle-color);
+      margin-top: 4px;
+    }
+  }
+
+  & .portifolio__content {
+    width: 100%;
+    gap: 10px;
+    justify-content: center;
+    & .card {
+      width: calc(300px + var(--border-width));
+      box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.25);
+      --bs-card-border-radius: 10px;
+      --bs-card-border-width: var(--border-width);
+      --bs-card-border-color: var(--buttons-color);
+      --bs-card-spacer-y: 7px;
+      --bs-card-spacer-x: 0;
+      transition: all 0.3s ease-in-out;
+
+      & .card-body {
+        & .project-img img {
+          width: 100%;
+          height: 170px;
+          object-fit: cover;
+          border-radius: 12px;
+          transition: all 0.3s ease-in-out;
+        }
+
+        & .card-title {
+          font-size: 1.125rem;
+          font-weight: 500;
+          color: var(--title-color);
+          margin: 0;
+          padding: 0;
+        }
+
+        & .technologies-used {
+          & .technologies-title {
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: var(--subtitle-color);
+            margin: 0 0 5px 0;
+            padding: 0;
+          }
+          & .technologies {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            gap: 10px;
+            margin-bottom: 10px;
+
+            & i {
+              cursor: pointer;
+              font-size: 1.5rem;
+              color: var(--buttons-color);
+              transition: all 0.3s ease-in-out;
+            }
+          }
+        }
+
+        & .card-text {
+          font-size: 0.75rem;
+          font-weight: 400;
+          color: var(--subtitle-color);
+          margin-bottom: 5px;
+        }
+        & .card-buttons {
+          & button {
+            --bs-btn-color: var(--icon-download-cv);
+            --bs-btn-bg: var(--buttons-color);
+            --bs-btn-border-color: var(--buttons-color);
+            --bs-btn-font-weight: 400;
+            --bs-btn-hover-bg: var(--buttons-hover);
+            --bs-btn-hover-border-color: var(--buttons-hover);
+            --bs-btn-active-bg: var(--buttons-active);
+            --bs-btn-active-border-color: var(--buttons-active);
+
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 10px;
+            font-size: 0.875rem;
+            padding: 8px 15px;
+            transition: all 0.3s ease;
+            transform: translateY(0);
+
+            & i {
+              font-size: 1.125rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.custom-tooltip {
+  --bs-tooltip-bg: var(--buttons-color) !important;
+  --bs-tooltip-color: var(--icon-download-cv) !important;
 }

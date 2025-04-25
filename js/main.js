@@ -1,8 +1,8 @@
 /*
-* Author: Marcos Vinicio Cardoso Sousa
-* Date: 2025-04-23
-* Description: This script handles the functionality of a personal portfolio website.
-*/
+ * Author: Marcos Vinicio Cardoso Sousa
+ * Date: 2025-04-23
+ * Description: This script handles the functionality of a personal portfolio website.
+ */
 const App = {
   data: {
     btnColorMode: document.querySelector("#btn-color-mode"),
@@ -146,6 +146,7 @@ const App = {
     App.methods.loadQualifications();
     App.methods.loadFooter();
     App.methods.loadAboutMe();
+    App.methods.loadBootstrapTooltip();
   },
   methods: {
     loadSplashScreen: () => {
@@ -310,8 +311,7 @@ const App = {
       );
       const timeline = document.querySelector(".timeline");
       const isJobsBtn =
-      activeBtnQualifications.querySelector("span").innerText ===
-      "Trabalhos";
+        activeBtnQualifications.querySelector("span").innerText === "Trabalhos";
 
       timeline.classList.add("fade-out");
 
@@ -346,15 +346,29 @@ const App = {
       const projectsCompleted = document.querySelector("#projectsCompleted");
       const companiesWorked = document.querySelector("#companiesWorked");
 
-      experienceYears.querySelector("h1").innerText = `${new Date().getFullYear() - App.  data.aboutMeDatas.startCarrerYears}+`;
-      projectsCompleted.querySelector("h1").innerText = `${App.data.aboutMeDatas.projectsCompleted}+`;
-      companiesWorked.querySelector("h1").innerText = `${App.data.aboutMeDatas.companiesWorked}+`;
+      experienceYears.querySelector("h1").innerText = `${
+        new Date().getFullYear() - App.data.aboutMeDatas.startCarrerYears
+      }+`;
+      projectsCompleted.querySelector(
+        "h1"
+      ).innerText = `${App.data.aboutMeDatas.projectsCompleted}+`;
+      companiesWorked.querySelector(
+        "h1"
+      ).innerText = `${App.data.aboutMeDatas.companiesWorked}+`;
     },
     loadFooter: () => {
       const footer = document.querySelector(".footer");
       footer.innerHTML = footer.innerHTML.replace(
         "{atualYear}",
         new Date().getFullYear()
+      );
+    },
+    loadBootstrapTooltip: () => {
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
       );
     },
     _updateLogo: (isDarkMode) => {
