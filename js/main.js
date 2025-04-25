@@ -129,6 +129,11 @@ const App = {
         endDate: "12/2023",
       },
     ],
+    aboutMeDatas: {
+      startCarrerYears: 2020,
+      projectsCompleted: 50,
+      companiesWorked: 3,
+    },
   },
   init: () => {
     App.methods.loadSplashScreen();
@@ -140,6 +145,7 @@ const App = {
     App.methods.loadBtnQualifications();
     App.methods.loadQualifications();
     App.methods.loadFooter();
+    App.methods.loadAboutMe();
   },
   methods: {
     loadSplashScreen: () => {
@@ -334,6 +340,15 @@ const App = {
           }, 500);
         });
       });
+    },
+    loadAboutMe: () => {
+      const experienceYears = document.querySelector("#experienceYears");
+      const projectsCompleted = document.querySelector("#projectsCompleted");
+      const companiesWorked = document.querySelector("#companiesWorked");
+
+      experienceYears.querySelector("h1").innerText = `${new Date().getFullYear() - App.  data.aboutMeDatas.startCarrerYears}+`;
+      projectsCompleted.querySelector("h1").innerText = `${App.data.aboutMeDatas.projectsCompleted}+`;
+      companiesWorked.querySelector("h1").innerText = `${App.data.aboutMeDatas.companiesWorked}+`;
     },
     loadFooter: () => {
       const footer = document.querySelector(".footer");
