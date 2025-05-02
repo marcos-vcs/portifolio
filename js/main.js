@@ -134,6 +134,52 @@ const App = {
       projectsCompleted: 50,
       companiesWorked: 3,
     },
+    projects: [
+      {
+        title: "Projeto 1",
+        description: "Descrição do projeto 1",
+        image: "https://private-user-images.githubusercontent.com/37250628/428598036-7811f4f0-72b9-4836-875a-1d9c370dd3fc.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDYxOTAyNDgsIm5iZiI6MTc0NjE4OTk0OCwicGF0aCI6Ii8zNzI1MDYyOC80Mjg1OTgwMzYtNzgxMWY0ZjAtNzJiOS00ODM2LTg3NWEtMWQ5YzM3MGRkM2ZjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTAyVDEyNDU0OFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWIzZTNlOTcwMGE1YThhN2RlNWI3NmQxN2NlOTJkYzAwNTZkMjMxNzExMDgwODIzZTYyNjYyYTQ3OWE2NzdlZjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.6hLtEz-KG9m1DzyJIp9K7kmDTmS7HMk77rbbmkiG9xQ",
+        altImage: "Imagem do projeto 1",
+        link: "https://github.com/marcos-vcs/portifolio",
+        linkPreview: 'https://ultimate-tic-tac-toe-nine.vercel.app/',
+        stacks: [
+          {
+            tooltip: "HTML",
+            icon: "fa-brands fa-html5",
+          },
+          {
+            tooltip: "CSS",
+            icon: "fa-brands fa-css3-alt",
+          },
+          {
+            tooltip: "JavaScript",
+            icon: "fa-brands fa-js",
+          },
+        ],
+      },
+      {
+        title: "Projeto 2",
+        description: "Descrição do projeto 2",
+        image: "img2.jpg",
+        altImage: "Imagem do projeto 2",
+        link: "",
+        linkPreview: '',
+        stacks: [
+          {
+            tooltip: "HTML",
+            icon: "fa-brands fa-html5",
+          },
+          {
+            tooltip: "CSS",
+            icon: "fa-brands fa-css3-alt",
+          },
+          {
+            tooltip: "JavaScript",
+            icon: "fa-brands fa-js",
+          },
+        ],
+      },
+    ],
   },
   init: () => {
     App.methods.loadSplashScreen();
@@ -147,6 +193,7 @@ const App = {
     App.methods.loadFooter();
     App.methods.loadAboutMe();
     App.methods.loadBootstrapTooltip();
+    App.methods.loadProjects();
   },
   methods: {
     loadSplashScreen: () => {
@@ -155,7 +202,7 @@ const App = {
           document.body.classList.add("loaded");
           setTimeout(() => {
             document.querySelector(".splash-screen").remove();
-          }, 1500);
+          }, 1000);
         }, 0);
       };
     },
@@ -371,6 +418,53 @@ const App = {
         (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
       );
     },
+    loadProjects: () => {
+      const projectsContainer = document.querySelector(".portifolio__content");
+
+      projectsContainer.innerHTML = "";
+      for (let i = 0; i < App.data.projects.length; i++) {
+        const { title, description, image, altImage, link, linkPreview, stacks } =
+          App.data.projects[i];
+        const projectItem = document.createElement("div");
+
+        projectItem.classList.add('card');
+        projectItem.classList.add('col-xs-12');
+        projectItem.classList.add('col-sm-12');
+        projectItem.classList.add('col-md-6');
+        projectItem.classList.add('col-lg-6');
+        projectItem.classList.add('col-xl-3');
+        projectItem.classList.add('col-xxl-4');
+
+        projectItem.innerHTML = `
+          <div class="card-body">
+            <div class="project-img">
+              <img src="${image}" alt="${altImage}">
+            </div>
+            <div class="card-title">${title}</div>
+            <div class="technologies-used">
+              <div class="technologies-title">
+                Tecnologias utilizadas:
+              </div>
+              <div class="technologies">
+                ${App.methods._loadskills(stacks)}
+              </div>
+              <div class="card-text">
+                <p>${description}</p>
+              </div>
+              
+              <div class="card-buttons">
+                <button onclick="App.methods._openLinkInButton('${link}')" type="button" class="btn btn-primary">
+                    Repositório
+                    <i class="fa-brands fa-github"></i>
+                </button>
+                ${App.methods._renderPreviewButton(linkPreview)}
+              </div>
+
+          </div>
+        `;
+        projectsContainer.appendChild(projectItem);
+      }
+    },
     _updateLogo: (isDarkMode) => {
       const logo = document.querySelector(".logo img");
       logo.src = `./assets/imgs/${
@@ -486,6 +580,37 @@ const App = {
           </div>
           `;
         timeline.appendChild(timelineItem);
+      }
+    },
+    _loadskills: (skillsList) => {
+      let skillsHTML = "";
+
+      for (let j = 0; j < skillsList.length; j++) {
+        const { tooltip, icon } = skillsList[j];
+
+        skillsHTML += `
+          <i class="${icon}"
+             title="${tooltip}"
+             data-bs-toggle="tooltip"
+             data-bs-placement="top"
+             data-bs-custom-class="custom-tooltip"
+             data-bs-title="${tooltip}">
+          </i>
+        `;
+      }
+      return skillsHTML;
+    },
+    _openLinkInButton: (link) => {
+      window.open(link, "_blank", "noopener,noreferrer");
+    },
+    _renderPreviewButton: (linkPreview) => {
+      if (linkPreview) {
+        return `<button onclick="App.methods._openLinkInButton('${linkPreview}')" type="button" class="btn btn-primary">
+                    Preview
+                    <i class="fa-solid fa-eye"></i>
+                </button>`;
+      } else {
+        return "";
       }
     },
   },
