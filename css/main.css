@@ -24,6 +24,7 @@ body {
 }
 
 * {
+  max-width: 100%;
   transition: background-color 0.3s ease, color 0.2s ease,
     border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -126,6 +127,10 @@ section {
   justify-content: center;
   align-items: center;
   height: 100dvh;
+
+  & .hello-img-mobile {
+    display: none;
+  }
 
   & .icons {
     display: flex;
@@ -610,7 +615,59 @@ section {
   --bs-tooltip-color: var(--icon-download-cv) !important;
 }
 
+.menu-open {
+  overflow-y: hidden;
+
+}
+
 @media (max-width: 768px) {
+  .home__container {
+    flex-direction: column;
+
+    & .icons {
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+
+    & .welcome-text {
+      width: 100%;
+      text-align: center;
+
+      & h1 {
+        font-size: 2rem;
+      }
+      & h3 {
+        font-size: 1rem;
+      }
+      & p {
+        font-size: 0.875rem;
+      }
+    }
+    & .mobile-home {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    & .welcome-text .scroll-down {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-left: 0px;
+    }
+
+    & .hello-img-mobile {
+      display: block;
+      width: 250px;
+      margin-top: 20px;
+    }
+
+    & .hello-img {
+      display: none;
+    }
+  }
+
   .menu {
     flex-direction: row;
     align-items: center;
@@ -618,12 +675,10 @@ section {
     & #btn-menu-hamburger {
       display: block;
       margin-right: 10px !important;
-      width: 40px;
-      height: 40px;
     }
 
     & .logo {
-      width: 110px;
+      width: 120px;
       margin-left: 4%;
       cursor: pointer;
     }
@@ -637,14 +692,15 @@ section {
     }
 
     & ul {
-      position: absolute;
+      position: fixed;
       background-color: var(--bg-menu-color);
       width: 100%;
       height: calc(100dvh - 60px);
       top: 60px;
 
       & li {
-        width: 100%;
+        margin-right: 4%;
+        margin-left: -4%;
         text-align: center;
         padding: 15px 0;
         border-bottom: 1px solid var(--border-color);

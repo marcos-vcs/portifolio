@@ -214,6 +214,12 @@ const App = {
         menu.classList.remove("active-menu");
       }
 
+      if (menuHamburger.querySelector("span").innerText === "close") {
+        document.body.classList.add("menu-open");
+      } else {
+        document.body.classList.remove("menu-open");
+      }
+
       menuHamburger.addEventListener("click", () => {
         menuHamburger.querySelector("span").innerHTML =
           menuHamburger.querySelector("span").innerHTML === "menu"
@@ -227,6 +233,12 @@ const App = {
         } else {
           menu.classList.add("inactive-menu");
           menu.classList.remove("active-menu");
+        }
+
+        if (menuHamburger.querySelector("span").innerText === "close") {
+          document.body.classList.add("menu-open");
+        } else {
+          document.body.classList.remove("menu-open");
         }
       });
     },
