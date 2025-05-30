@@ -52,6 +52,10 @@ body {
   padding: 15px 0 6px 0;
   z-index: 1000;
 
+  & #btn-menu-hamburger {
+    display: none;
+  }
+
   & .logo {
     width: 110px;
     margin-left: 2%;
@@ -604,4 +608,47 @@ section {
 .custom-tooltip {
   --bs-tooltip-bg: var(--buttons-color) !important;
   --bs-tooltip-color: var(--icon-download-cv) !important;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: row;
+    align-items: center;
+
+    & #btn-menu-hamburger {
+      display: block;
+      margin-right: 10px !important;
+      width: 40px;
+      height: 40px;
+    }
+
+    & .logo {
+      width: 110px;
+      margin-left: 4%;
+      cursor: pointer;
+    }
+  
+    & .active-menu {
+      display: block;
+    }
+
+    & .inactive-menu {
+      display: none;
+    }
+
+    & ul {
+      position: absolute;
+      background-color: var(--bg-menu-color);
+      width: 100%;
+      height: calc(100dvh - 60px);
+      top: 60px;
+
+      & li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--border-color);
+      }
+    }
+  }
 }

@@ -138,10 +138,11 @@ const App = {
       {
         title: "Projeto 1",
         description: "Descrição do projeto 1",
-        image: "https://private-user-images.githubusercontent.com/37250628/428598036-7811f4f0-72b9-4836-875a-1d9c370dd3fc.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDYxOTAyNDgsIm5iZiI6MTc0NjE4OTk0OCwicGF0aCI6Ii8zNzI1MDYyOC80Mjg1OTgwMzYtNzgxMWY0ZjAtNzJiOS00ODM2LTg3NWEtMWQ5YzM3MGRkM2ZjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTAyVDEyNDU0OFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWIzZTNlOTcwMGE1YThhN2RlNWI3NmQxN2NlOTJkYzAwNTZkMjMxNzExMDgwODIzZTYyNjYyYTQ3OWE2NzdlZjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.6hLtEz-KG9m1DzyJIp9K7kmDTmS7HMk77rbbmkiG9xQ",
+        image:
+          "https://private-user-images.githubusercontent.com/37250628/428598036-7811f4f0-72b9-4836-875a-1d9c370dd3fc.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDYxOTAyNDgsIm5iZiI6MTc0NjE4OTk0OCwicGF0aCI6Ii8zNzI1MDYyOC80Mjg1OTgwMzYtNzgxMWY0ZjAtNzJiOS00ODM2LTg3NWEtMWQ5YzM3MGRkM2ZjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTAyVDEyNDU0OFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWIzZTNlOTcwMGE1YThhN2RlNWI3NmQxN2NlOTJkYzAwNTZkMjMxNzExMDgwODIzZTYyNjYyYTQ3OWE2NzdlZjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.6hLtEz-KG9m1DzyJIp9K7kmDTmS7HMk77rbbmkiG9xQ",
         altImage: "Imagem do projeto 1",
         link: "https://github.com/marcos-vcs/portifolio",
-        linkPreview: 'https://ultimate-tic-tac-toe-nine.vercel.app/',
+        linkPreview: "https://ultimate-tic-tac-toe-nine.vercel.app/",
         stacks: [
           {
             tooltip: "HTML",
@@ -163,7 +164,7 @@ const App = {
         image: "img2.jpg",
         altImage: "Imagem do projeto 2",
         link: "",
-        linkPreview: '',
+        linkPreview: "",
         stacks: [
           {
             tooltip: "HTML",
@@ -194,8 +195,41 @@ const App = {
     App.methods.loadAboutMe();
     App.methods.loadBootstrapTooltip();
     App.methods.loadProjects();
+    App.methods.loadMenuHamburger();
   },
   methods: {
+    loadMenuHamburger: () => {
+      const menuHamburger = document.querySelector("#btn-menu-hamburger");
+      menuHamburger.querySelector("span").innerHTML =
+        menuHamburger.querySelector("span").innerHTML === "menu"
+          ? "close"
+          : "menu";
+
+      const menu = document.querySelector(".menu").querySelector("ul");
+      if (menuHamburger.querySelector("span").innerText === "close") {
+        menu.classList.add("active-menu");
+        menu.classList.remove("inactive-menu");
+      } else {
+        menu.classList.add("inactive-menu");
+        menu.classList.remove("active-menu");
+      }
+
+      menuHamburger.addEventListener("click", () => {
+        menuHamburger.querySelector("span").innerHTML =
+          menuHamburger.querySelector("span").innerHTML === "menu"
+            ? "close"
+            : "menu";
+
+        const menu = document.querySelector(".menu").querySelector("ul");
+        if (menuHamburger.querySelector("span").innerText === "close") {
+          menu.classList.add("active-menu");
+          menu.classList.remove("inactive-menu");
+        } else {
+          menu.classList.add("inactive-menu");
+          menu.classList.remove("active-menu");
+        }
+      });
+    },
     loadSplashScreen: () => {
       window.onload = () => {
         setTimeout(() => {
@@ -423,17 +457,24 @@ const App = {
 
       projectsContainer.innerHTML = "";
       for (let i = 0; i < App.data.projects.length; i++) {
-        const { title, description, image, altImage, link, linkPreview, stacks } =
-          App.data.projects[i];
+        const {
+          title,
+          description,
+          image,
+          altImage,
+          link,
+          linkPreview,
+          stacks,
+        } = App.data.projects[i];
         const projectItem = document.createElement("div");
 
-        projectItem.classList.add('card');
-        projectItem.classList.add('col-xs-12');
-        projectItem.classList.add('col-sm-12');
-        projectItem.classList.add('col-md-6');
-        projectItem.classList.add('col-lg-6');
-        projectItem.classList.add('col-xl-3');
-        projectItem.classList.add('col-xxl-4');
+        projectItem.classList.add("card");
+        projectItem.classList.add("col-xs-12");
+        projectItem.classList.add("col-sm-12");
+        projectItem.classList.add("col-md-6");
+        projectItem.classList.add("col-lg-6");
+        projectItem.classList.add("col-xl-3");
+        projectItem.classList.add("col-xxl-4");
 
         projectItem.innerHTML = `
           <div class="card-body">
