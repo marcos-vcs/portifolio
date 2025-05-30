@@ -315,8 +315,10 @@ const App = {
         });
     },
     loadDownloadCV: () => {
-      const downloadBtn = document.querySelector(".about__download-cv button");
+      const downloadBtn = window.innerWidth <= 768 ? document.querySelector(".about__download-cv-mobile button") : document.querySelector(".about__download-cv button");
 
+      console.log(window.innerWidth);
+      console.log(downloadBtn);
       if (downloadBtn) {
         downloadBtn.addEventListener("click", () => {
           window.open(
