@@ -206,54 +206,54 @@ const App = {
     ],
     jobs: [
       {
-        title: "Desenvolvedor Front-End",
-        company: "Empresa A",
-        startDate: "01/2020",
-        endDate: "12/2023",
+        title: "Desenvolvedor de Software",
+        company: "LG Lugar De Gente",
+        startDate: "06/2024",
+        endDate: "Atualmente",
       },
       {
-        title: "Desenvolvedor Back-End",
-        company: "Empresa B",
-        startDate: "01/2020",
-        endDate: "12/2023",
+        title: "Desenvolvedor de Software Trainee",
+        company: "LG Lugar De Gente",
+        startDate: "04/2023",
+        endDate: "06/2024",
       },
       {
-        title: "Estagiário em Desenvolvimento Web",
-        company: "Empresa C",
-        startDate: "01/2020",
-        endDate: "12/2023",
+        title: "Estagiário de Desenvolvimento de Software",
+        company: "LG Lugar De Gente",
+        startDate: "01/2022",
+        endDate: "09/2023",
+      },
+      {
+        title: "Desenvolvedor Full-Stack",
+        company: "Meta Tecnologia da Informação",
+        startDate: "05/2021",
+        endDate: "06/2022",
+      },
+      {
+        title: "Estagiário de Tecnologia da Informação",
+        company: "Dinamo Contabilidade",
+        startDate: "08/2020",
+        endDate: "10/2021",
       },
     ],
     degrees: [
       {
-        title: "Bacharel em Ciência da Computação",
-        institution: "Universidade X",
+        title: "Bacharelado em Sistemas de Informação",
+        institution: "UNIFASAM - Centro Universitário Sul-Americano",
         startDate: "01/2020",
-        endDate: "12/2023",
+        endDate: "12/2024",
       },
       {
-        title: "Técnico em Informática",
-        institution: "Escola Y",
-        startDate: "01/2020",
-        endDate: "12/2023",
+        title: "Técnico em Manutenção e Suporte em Informática",
+        institution: "Universidade Estadual de Goiás",
+        startDate: "01/2016",
+        endDate: "12/2018",
       },
       {
-        title: "Curso de Desenvolvimento Web",
-        institution: "Instituto Z",
-        startDate: "01/2020",
-        endDate: "12/2023",
-      },
-      {
-        title: "Curso de Banco de Dados",
-        institution: "Instituto W",
-        startDate: "01/2020",
-        endDate: "12/2023",
-      },
-      {
-        title: "Curso de Python",
-        institution: "Instituto V",
-        startDate: "01/2020",
-        endDate: "12/2023",
+        title: "Ensino Médio",
+        institution: "Colégio Estadual Machado de Assis",
+        startDate: "01/2015",
+        endDate: "12/2018",
       },
     ],
     aboutMeDatas: {
@@ -447,8 +447,6 @@ const App = {
           ? document.querySelector(".about__download-cv-mobile button")
           : document.querySelector(".about__download-cv button");
 
-      console.log(window.innerWidth);
-      console.log(downloadBtn);
       if (downloadBtn) {
         downloadBtn.addEventListener("click", () => {
           window.open(
@@ -715,7 +713,7 @@ const App = {
       const startStr = `${months[parseInt(monthStart) - 1]} ${yearStart}`;
       const endStr = `${months[parseInt(monthEnd) - 1]} ${yearEnd}`;
 
-      return `${startStr} - ${endStr}`;
+      return `${startStr} - ${end === "Atualmente" ? end : endStr}`;
     },
     _loadDegrees: () => {
       const timeline = document.querySelector(".timeline");

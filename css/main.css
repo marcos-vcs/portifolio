@@ -329,7 +329,8 @@ section {
 }
 
 .skills__container {
-  height: 100dvh;
+  min-height: 100dvh;
+  padding-bottom: 80px;
 
   & .skills__title {
     text-align: center;
@@ -737,8 +738,8 @@ section {
   }
 
   .skills__container {
+    min-height: auto;
     height: auto;
-    padding-bottom: 80px;
   }
 
   .portifolio__container {
