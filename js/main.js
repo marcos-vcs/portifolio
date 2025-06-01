@@ -9,7 +9,7 @@ const App = {
     accordionSkills: [
       {
         title: "Front-End",
-        lastUpdate: "2023-10-01",
+        lastUpdate: "2025-06-01",
         icon: "fa-solid fa-laptop-code",
         skills: [
           {
@@ -22,58 +22,185 @@ const App = {
           },
           {
             name: "JavaScript",
+            level: 90,
+          },
+          {
+            name: "TypeScript",
+            level: 70,
+          },
+          {
+            name: "JQuery",
+            level: 70,
+          },
+          {
+            name: "Bootstrap",
             level: 80,
           },
           {
             name: "React",
-            level: 70,
+            level: 30,
           },
           {
             name: "Vue.js",
+            level: 80,
+          },
+          {
+            name: "PrimeVue",
+            level: 80,
+          },
+          {
+            name: "PrimeFlex",
+            level: 80,
+          },
+          {
+            name: "Angular",
+            level: 70,
+          },
+          {
+            name: "Angular Material",
+            level: 70,
+          },
+          {
+            name: "Ionic",
             level: 60,
           },
         ],
       },
       {
         title: "Back-End",
-        lastUpdate: "2023-10-01",
+        lastUpdate: "2025-06-01",
         icon: "fa-solid fa-server",
         skills: [
           {
-            name: "Node.js",
+            name: "C#",
+            level: 80,
+          },
+          {
+            name: "Windows Forms",
+            level: 50,
+          },
+          {
+            name: "ASP.NET MVC",
+            level: 80,
+          },
+          {
+            name: "Entity Framework",
             level: 70,
           },
           {
-            name: "Express.js",
+            name: ".NET",
+            level: 80,
+          },
+          {
+            name: "IIS (Internet Information Services)",
             level: 70,
           },
           {
-            name: "Python",
-            level: 60,
+            name: "Java",
+            level: 80,
           },
           {
-            name: "Django",
-            level: 60,
+            name: "Spring Boot",
+            level: 80,
+          },
+          {
+            name: "Spring data JPA",
+            level: 80,
+          },
+          {
+            name: "Spring Security",
+            level: 70,
           },
         ],
       },
       {
         title: "Banco de Dados",
-        lastUpdate: "2023-10-01",
+        lastUpdate: "2025-06-01",
         icon: "fa-solid fa-database",
         skills: [
           {
-            name: "MySQL",
+            name: "SQL Server",
             level: 80,
           },
           {
-            name: "MongoDB",
+            name: "T-SQL (Transact-SQL)",
+            level: 80,
+          },
+          {
+            name: "MySQL",
             level: 70,
           },
           {
-            name: "PostgreSQL",
+            name: "SQLite",
+            level: 70,
+          },
+          {
+            name: "MongoDB",
             level: 60,
           },
+        ],
+      },
+      {
+        title: "Ferramentas/Outros",
+        lastUpdate: "2025-06-01",
+        icon: "fa-solid fa-tools",
+        skills: [
+          {
+            name: "Git",
+            level: 80,
+          },
+          {
+            name: "GitHub",
+            level: 80,
+          },
+          {
+            name: "Postman",
+            level: 70,
+          },
+          {
+            name: "Figma",
+            level: 60,
+          },
+          {
+            name: "Visual Studio Code",
+            level: 90,
+          },
+          {
+            name: "Visual Studio",
+            level: 80,
+          },
+          {
+            name: "Eclipse",
+            level: 70,
+          },
+          {
+            name: "IntelliJ IDEA",
+            level: 70,
+          },
+          {
+            name: "NetBeans",
+            level: 60,
+          },
+          {
+            name: "CI/CD",
+            level: 60,
+          },
+          {
+            name: "Agile (Scrum/Kanban)",
+            level: 70,
+          },
+        ],
+      },
+      {
+        title: "Cloud & Deployment",
+        lastUpdate: "2025-06-01",
+        icon: "fa-solid fa-cloud",
+        skills: [
+          { name: "Vercel", level: 80 },
+          { name: "Heroku", level: 80 },
+          { name: "Railway", level: 70 },
+          { name: "AWS", level: 50 },
+          { name: "Google Cloud Platform (GCP)", level: 50 },
         ],
       },
     ],
@@ -315,7 +442,10 @@ const App = {
         });
     },
     loadDownloadCV: () => {
-      const downloadBtn = window.innerWidth <= 768 ? document.querySelector(".about__download-cv-mobile button") : document.querySelector(".about__download-cv button");
+      const downloadBtn =
+        window.innerWidth <= 768
+          ? document.querySelector(".about__download-cv-mobile button")
+          : document.querySelector(".about__download-cv button");
 
       console.log(window.innerWidth);
       console.log(downloadBtn);
