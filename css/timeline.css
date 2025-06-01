@@ -108,11 +108,11 @@
 
   @media (max-width: 768px) {
     .timeline::before {
-      left: 8px;
+      left: 20px;
     }
   
     .timeline-item {
-      width: 100%;
+      width: 90%;
       padding-left: 2rem;
       padding-right: 0;
     }

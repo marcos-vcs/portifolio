@@ -498,7 +498,7 @@ section {
 }
 
 .portifolio__container {
-  height: 100dvh;
+  margin-bottom: 20px;
   width: 100%;
   display: flex;
   flex-direction: column;
