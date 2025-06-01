@@ -252,6 +252,10 @@ section {
     align-items: center;
     gap: 35px;
 
+    & .about__download-cv-mobile {
+      display: none;
+    }
+
     & .about__img-container {
       width: 370px;
     }
@@ -294,10 +298,6 @@ section {
             margin: 0;
           }
         }
-      }
-
-      & .about__download-cv-mobile {
-        display: none;
       }
 
       & .about__download-cv button {
@@ -620,7 +620,6 @@ section {
 
 .menu-open {
   overflow-y: hidden;
-
 }
 
 @media (max-width: 768px) {
@@ -682,6 +681,10 @@ section {
     & .about__content {
       flex-direction: column;
       align-items: center;
+
+      & .about__download-cv-mobile {
+        display: block;
+      }
 
       & .about__img-container {
         width: 80%;
@@ -761,7 +764,7 @@ section {
       margin-left: 4%;
       cursor: pointer;
     }
-  
+
     & .active-menu {
       display: block;
     }
