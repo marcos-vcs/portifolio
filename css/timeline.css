@@ -106,7 +106,7 @@
   transform: translateY(0);
 }
 
-/*   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     .timeline::before {
       left: 8px;
     }
@@ -127,4 +127,4 @@
     .timeline-item.right::before {
       left: -26px;
     }
-  } */
+  }
