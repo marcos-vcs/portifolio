@@ -498,7 +498,6 @@ section {
 }
 
 .portifolio__container {
-  margin-bottom: 20px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -626,6 +625,9 @@ section {
 @media (max-width: 768px) {
   .home__container {
     flex-direction: column;
+    height: auto;
+    padding-bottom: 80px;
+    padding-top: 60px;
 
     & .icons {
       margin-bottom: 20px;
@@ -673,7 +675,8 @@ section {
 
   .about__container {
     height: auto;
-    padding-bottom: 100px;
+    height: auto;
+    padding-bottom: 80px;
 
     & .about__content {
       flex-direction: column;
@@ -729,6 +732,16 @@ section {
     }
   }
 
+  .skills__container {
+    height: auto;
+    padding-bottom: 80px;
+  }
+
+  .portifolio__container {
+    height: auto;
+    margin-bottom: 20px;
+  }
+
   #accordionSkills {
     max-width: 90%;
   }
@@ -739,7 +752,7 @@ section {
 
     & #btn-menu-hamburger {
       display: block;
-      margin-right: 10px !important;
+      margin-right: 25px !important;
     }
 
     & .logo {
