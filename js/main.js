@@ -206,7 +206,7 @@ const App = {
     ],
     jobs: [
       {
-        title: "Desenvolvedor de Software",
+        title: "Desenvolvedor de Software júnior",
         company: "LG Lugar De Gente",
         startDate: "06/2024",
         endDate: "Atualmente",
@@ -263,12 +263,43 @@ const App = {
     },
     projects: [
       {
-        title: "Projeto 1",
-        description: "Descrição do projeto 1",
-        image:
-          "https://private-user-images.githubusercontent.com/37250628/428598036-7811f4f0-72b9-4836-875a-1d9c370dd3fc.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDYxOTAyNDgsIm5iZiI6MTc0NjE4OTk0OCwicGF0aCI6Ii8zNzI1MDYyOC80Mjg1OTgwMzYtNzgxMWY0ZjAtNzJiOS00ODM2LTg3NWEtMWQ5YzM3MGRkM2ZjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTAyVDEyNDU0OFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWIzZTNlOTcwMGE1YThhN2RlNWI3NmQxN2NlOTJkYzAwNTZkMjMxNzExMDgwODIzZTYyNjYyYTQ3OWE2NzdlZjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.6hLtEz-KG9m1DzyJIp9K7kmDTmS7HMk77rbbmkiG9xQ",
-        altImage: "Imagem do projeto 1",
+        title: "Portfólio Pessoal",
+        description:
+          "Meu portfólio pessoal, desenvolvido com HTML, CSS e JavaScript.",
+        image: "../assets/imgs/projects/portfolio.jpg",
+        altImage: "Imagem do projeto Portfólio Pessoal",
+        linkPreview: "",
         link: "https://github.com/marcos-vcs/portifolio",
+        stacks: [
+          {
+            tooltip: "HTML",
+            icon: "fa-brands fa-html5",
+          },
+          {
+            tooltip: "CSS",
+            icon: "fa-brands fa-css3-alt",
+          },
+          {
+            tooltip: "JavaScript",
+            icon: "fa-brands fa-js",
+          },
+          {
+            tooltip: "Bootstrap",
+            icon: "fa-brands fa-bootstrap",
+          },
+          {
+            tooltip: "Font-awesome",
+            icon: "fa-brands fa-font-awesome",
+          },
+        ],
+      },
+      {
+        title: "Ultimate Tic Tac Toe",
+        description:
+          "Um jogo moderno e interativo de Jogo da Velha com IA inteligente, multiplayer e personalização completa!",
+        image: "../assets/imgs/projects/ultimate-tic-tac-toe.png",
+        altImage: "Imagem do projeto Ultimate Tic Tac Toe",
+        link: "https://github.com/marcos-vcs/ultimate-tic-tac-toe",
         linkPreview: "https://ultimate-tic-tac-toe-nine.vercel.app/",
         stacks: [
           {
@@ -283,16 +314,29 @@ const App = {
             tooltip: "JavaScript",
             icon: "fa-brands fa-js",
           },
+          {
+            tooltip: "Font-awesome",
+            icon: "fa-brands fa-font-awesome",
+          },
+          {
+            tooltip: "Tailwind CSS",
+            icon: "fa-brands fa-tailwindcss",
+          },
         ],
       },
       {
-        title: "Projeto 2",
-        description: "Descrição do projeto 2",
-        image: "img2.jpg",
-        altImage: "Imagem do projeto 2",
-        link: "",
-        linkPreview: "",
+        title: "Facilita Tasks",
+        description:
+          "Aplicação web para gerenciamento de tarefas com autenticação, cadastro de atividades e controle de status. Projeto com arquitetura moderna e design responsivo.",
+        image: "../assets/imgs/projects/facilita-task.jpg",
+        altImage: "Preview da aplicação Facilita Tasks",
+        link: "https://github.com/marcos-vcs/facilita-tasks",
+        linkPreview: "https://facilita-tasks-mocha.vercel.app/#/home",
         stacks: [
+          {
+            tooltip: "Vue.js",
+            icon: "fa-brands fa-vuejs",
+          },
           {
             tooltip: "HTML",
             icon: "fa-brands fa-html5",
