@@ -405,6 +405,33 @@ const App = {
           },
         ],
       },
+      {
+        title: "Número Secreto",
+        description:
+          "Jogo interativo em que o jogador tenta adivinhar um número secreto gerado aleatoriamente. O diferencial é a jogabilidade por comandos de voz e reinício automático ao dizer palavras como 'reiniciar' ou 'novo jogo'.",
+        image: "../assets/imgs/projects/numero-secreto.png",
+        altImage: "Imagem do jogo Número Secreto",
+        link: "https://github.com/marcos-vcs/numero-secreto",
+        linkPreview: "https://numero-secreto-omega-seven.vercel.app/",
+        stacks: [
+          {
+            tooltip: "HTML",
+            icon: "fa-brands fa-html5",
+          },
+          {
+            tooltip: "CSS",
+            icon: "fa-brands fa-css3-alt",
+          },
+          {
+            tooltip: "JavaScript",
+            icon: "fa-brands fa-js",
+          },
+          {
+            tooltip: "Reconhecimento de Voz",
+            icon: "fa-solid fa-microphone",
+          },
+        ],
+      },
     ],
   },
   init: () => {
