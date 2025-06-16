@@ -355,7 +355,7 @@ const App = {
         title: "Serenatto Coffee",
         description:
           "Landing page responsiva para uma cafeteria fictícia, com design elegante, animações suaves e foco na experiência do usuário.",
-        image:"../assets/imgs/projects/serenatto.png",
+        image: "../assets/imgs/projects/serenatto.png",
         altImage: "Imagem da landing page Serenatto Coffee",
         link: "https://github.com/marcos-vcs/serenatto",
         linkPreview: "https://serenatto-coffee.vercel.app/",
@@ -375,7 +375,34 @@ const App = {
           {
             tooltip: "Bootstrap",
             icon: "fa-brands fa-bootstrap",
-          }
+          },
+        ],
+      },
+      {
+        title: "Meteora",
+        description:
+          "Landing page responsiva para uma loja de roupas fictícia, com layout moderno, componentes do Bootstrap e foco em acessibilidade.",
+        image: "../assets/imgs/projects/meteora.png",
+        altImage: "Imagem da landing page Meteora",
+        link: "https://github.com/marcos-vcs/meteora",
+        linkPreview: "https://meteora-rust-kappa.vercel.app/",
+        stacks: [
+          {
+            tooltip: "HTML",
+            icon: "fa-brands fa-html5",
+          },
+          {
+            tooltip: "CSS",
+            icon: "fa-brands fa-css3-alt",
+          },
+          {
+            tooltip: "JavaScript",
+            icon: "fa-brands fa-js",
+          },
+          {
+            tooltip: "Bootstrap",
+            icon: "fa-brands fa-bootstrap",
+          },
         ],
       },
     ],
