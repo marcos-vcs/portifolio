@@ -618,7 +618,7 @@ const App = {
         const skillsList = card.querySelector(`.skills-${i}`);
         for (let j = 0; j < skills.length; j++) {
           skillsList.innerHTML += `
-            <div class="skill">
+            <div class="skill" aria-label="Habilidade ${skills[j].name} com nível ${skills[j].level}%" tabindex="0">
               <div class="skill_name">${skills[j].name}</div>
               <div class="skill_level">
                 <div class="skill_level">${skills[j].level}%</div>
@@ -735,6 +735,8 @@ const App = {
         } = App.data.projects[i];
         const projectItem = document.createElement("div");
 
+        projectItem.setAttribute("tabindex", "0");
+        projectItem.setAttribute("aria-label", `Projeto ${title}`);
         projectItem.classList.add("card");
         projectItem.classList.add("col-xs-12");
         projectItem.classList.add("col-sm-12");
@@ -851,7 +853,7 @@ const App = {
         timelineItem.classList.add(i % 2 === 0 ? "left" : "right");
 
         timelineItem.innerHTML = `
-          <div class="content">
+          <div class="content" tabindex="0" aria-label="Qualificação ${title} na instituição ${institution} de ${startDate} até ${endDate}">
             <h5>${title}</h5>
             <p class="institution">${institution}</p>
             <p class="date">
@@ -876,7 +878,7 @@ const App = {
         timelineItem.classList.add(i % 2 === 0 ? "left" : "right");
 
         timelineItem.innerHTML = `
-          <div class="content">
+          <div class="content" tabindex="0" aria-label="Experiência profissional ${title} na empresa ${company} de ${startDate} até ${endDate}">
             <h5>${title}</h5>
             <p class="institution">${company}</p>
             <p class="date">
