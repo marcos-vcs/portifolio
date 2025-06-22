@@ -779,7 +779,8 @@ section {
       position: fixed;
       background-color: var(--bg-menu-color);
       width: 100%;
-      height: calc(100dvh - 60px);
+      /* height: calc(100dvh - 60px); */
+      height: 100dvh;
       top: 60px;
 
       & li {
