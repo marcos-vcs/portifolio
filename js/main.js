@@ -14,27 +14,27 @@ const App = {
         skills: [
           {
             name: "HTML",
-            level: 90,
+            level: 80,
           },
           {
             name: "CSS",
-            level: 90,
+            level: 70,
           },
           {
             name: "JavaScript",
-            level: 90,
+            level: 70,
           },
           {
             name: "TypeScript",
-            level: 70,
+            level: 60,
           },
           {
             name: "JQuery",
-            level: 70,
+            level: 50,
           },
           {
             name: "Bootstrap",
-            level: 80,
+            level: 50,
           },
           {
             name: "React",
@@ -42,23 +42,23 @@ const App = {
           },
           {
             name: "Vue.js",
-            level: 80,
+            level: 70,
           },
           {
             name: "PrimeVue",
-            level: 80,
+            level: 60,
           },
           {
             name: "PrimeFlex",
-            level: 80,
+            level: 60,
           },
           {
             name: "Angular",
-            level: 70,
+            level: 50,
           },
           {
             name: "Angular Material",
-            level: 70,
+            level: 40,
           },
           {
             name: "Ionic",
@@ -73,43 +73,43 @@ const App = {
         skills: [
           {
             name: "C#",
-            level: 80,
+            level: 70,
           },
           {
             name: "Windows Forms",
-            level: 50,
+            level: 40,
           },
           {
             name: "ASP.NET MVC",
-            level: 80,
+            level: 40,
           },
           {
             name: "Entity Framework",
-            level: 70,
+            level: 40,
           },
           {
             name: ".NET",
-            level: 80,
+            level: 40,
           },
           {
             name: "IIS (Internet Information Services)",
-            level: 70,
+            level: 40,
           },
           {
             name: "Java",
-            level: 80,
+            level: 70,
           },
           {
             name: "Spring Boot",
-            level: 80,
+            level: 60,
           },
           {
             name: "Spring data JPA",
-            level: 80,
+            level: 60,
           },
           {
             name: "Spring Security",
-            level: 70,
+            level: 50,
           },
         ],
       },
@@ -120,23 +120,23 @@ const App = {
         skills: [
           {
             name: "SQL Server",
-            level: 80,
+            level: 60,
           },
           {
             name: "T-SQL (Transact-SQL)",
-            level: 80,
+            level: 60,
           },
           {
             name: "MySQL",
-            level: 70,
+            level: 60,
           },
           {
             name: "SQLite",
-            level: 70,
+            level: 40,
           },
           {
             name: "MongoDB",
-            level: 60,
+            level: 40,
           },
         ],
       },
@@ -147,27 +147,27 @@ const App = {
         skills: [
           {
             name: "Git",
-            level: 80,
-          },
-          {
-            name: "GitHub",
-            level: 80,
-          },
-          {
-            name: "Postman",
             level: 70,
           },
           {
-            name: "Figma",
+            name: "GitHub",
             level: 60,
           },
           {
+            name: "Postman",
+            level: 60,
+          },
+          {
+            name: "Figma",
+            level: 40,
+          },
+          {
             name: "Visual Studio Code",
-            level: 90,
+            level: 70,
           },
           {
             name: "Visual Studio",
-            level: 80,
+            level: 70,
           },
           {
             name: "Eclipse",
@@ -196,11 +196,11 @@ const App = {
         lastUpdate: "2025-06-01",
         icon: "fa-solid fa-cloud",
         skills: [
-          { name: "Vercel", level: 80 },
-          { name: "Heroku", level: 80 },
-          { name: "Railway", level: 70 },
-          { name: "AWS", level: 50 },
-          { name: "Google Cloud Platform (GCP)", level: 50 },
+          { name: "Vercel", level: 70 },
+          { name: "Heroku", level: 60 },
+          { name: "Railway", level: 60 },
+          { name: "AWS", level: 40 },
+          { name: "Google Cloud Platform (GCP)", level: 40 },
         ],
       },
     ],
