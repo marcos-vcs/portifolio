@@ -7,17 +7,12 @@ Uma landing page moderna, responsiva e minimalista para apresentar minhas habili
 ## ✨ Funcionalidades Principais
 
 -   Layout responsivo para todos os dispositivos
-    
 -   Seção de apresentação pessoal
-    
 -   Listagem de projetos com links para repositórios
-    
 -   Links para redes sociais e contato
-    
 -   Design limpo e moderno
-    
 -   Fácil personalização de conteúdo e estilo
-    
+-   Recursos de Acessibilidade e SEO aprimorados    
 
 ## 🚀 Tecnologias Utilizadas
 
