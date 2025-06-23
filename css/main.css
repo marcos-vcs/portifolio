@@ -440,7 +440,6 @@ section {
   text-align: center;
   font-size: 0.875rem;
   font-weight: 400;
-  margin-right: -13px;
 
   & p {
     width: 100%;
@@ -780,7 +779,6 @@ section {
       position: fixed;
       background-color: var(--bg-menu-color);
       width: 100%;
-      /* height: calc(100dvh - 60px); */
       height: 100dvh;
       top: 60px;
 
@@ -792,5 +790,9 @@ section {
         border-bottom: 1px solid var(--border-color);
       }
     }
+  }
+
+  .footer {
+    margin-right: -13px;
   }
 }
